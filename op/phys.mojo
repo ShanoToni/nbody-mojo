@@ -130,7 +130,7 @@ fn physics_kernel_optimized[
 
 
 
-from sys import simdwidthof, argv, alignof
+from sys import simd_width_of, argv, align_of
 from utils import IndexList
 from algorithm.functional import elementwise, vectorize
 
@@ -153,7 +153,7 @@ fn physics_cpu[
 
     @parameter
     @always_inline
-    fn compute_physics[width: Int, rank: Int, alignment: Int = alignof[dtype]()](indices: IndexList[rank]) capturing -> None:
+    fn compute_physics[width: Int, rank: Int, alignment: Int = align_of[dtype]()](indices: IndexList[rank]) capturing -> None:
         i = indices[0]
         j = indices[1]
 
